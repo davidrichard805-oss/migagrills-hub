@@ -1,0 +1,908 @@
+/* =========================================
+   MIGAGRILLS HUB
+   Professional Shawarma Bread Supply
+   ========================================= */
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  color: #171717;
+  background: #fffaf7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fffaf7;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================
+     HEADER
+     ========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 6%;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #e93b20;
+  color: white;
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(233, 59, 32, 0.22);
+}
+
+.brand-text strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+}
+
+.brand-text small {
+  color: #777;
+  font-size: 12px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.site-nav a:hover {
+  color: #e93b20;
+}
+
+.nav-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #e93b20;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(233, 59, 32, 0.2);
+}
+
+.nav-button:hover {
+  background: #c92f19;
+}
+
+/* =========================================
+     HERO
+     ========================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 680px;
+  display: grid;
+  align-items: center;
+  padding: 90px 6%;
+  background: radial-gradient(
+      circle at 85% 20%,
+      rgba(233, 59, 32, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #fffaf7 0%, #fff1eb 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  bottom: -180px;
+  border-radius: 50%;
+  background: rgba(233, 59, 32, 0.08);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #e93b20;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: #e93b20;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 28px auto 0;
+  color: #666;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 25px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #e93b20;
+  color: white;
+  box-shadow: 0 12px 25px rgba(233, 59, 32, 0.23);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  background: #c92f19;
+}
+
+.secondary-button {
+  border: 1.5px solid #e93b20;
+  color: #e93b20;
+  background: white;
+}
+
+.secondary-button:hover {
+  background: #fff0eb;
+}
+
+/* =========================================
+     STATS
+     ========================================= */
+
+.stats {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  margin: -45px auto 0;
+  padding: 25px;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.09);
+}
+
+.stat {
+  padding: 15px;
+  text-align: center;
+  border-right: 1px solid #eeeeee;
+}
+
+.stat:last-child {
+  border-right: 0;
+}
+
+.stat strong {
+  display: block;
+  color: #e93b20;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.stat span {
+  color: #777;
+  font-size: 14px;
+}
+
+/* =========================================
+     GENERAL SECTIONS
+     ========================================= */
+
+.section {
+  padding: 100px 6%;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-heading span {
+  color: #e93b20;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 12px 0;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.section-heading p {
+  color: #777;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================
+     ABOUT
+     ========================================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-card {
+  padding: 32px;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+}
+
+.about-card .icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #fff0eb;
+  font-size: 23px;
+}
+
+.about-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.about-card p {
+  margin: 0;
+  color: #707070;
+  line-height: 1.7;
+}
+
+/* =========================================
+     HOW IT WORKS
+     ========================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.step {
+  position: relative;
+  padding: 32px;
+  background: #171717;
+  color: white;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.step-number {
+  color: #e93b20;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.step h3 {
+  margin: 15px 0 10px;
+  font-size: 22px;
+}
+
+.step p {
+  margin: 0;
+  color: #cfcfcf;
+  line-height: 1.7;
+}
+
+/* =========================================
+     SUPPLY
+     ========================================= */
+
+.supply-section {
+  background: #171717;
+  color: white;
+}
+
+.supply-section .section-heading p {
+  color: #bdbdbd;
+}
+
+.supply-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.supply-card {
+  padding: 35px;
+  border: 1px solid #333;
+  border-radius: 18px;
+  background: #222;
+}
+
+.supply-card h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.supply-card p,
+.supply-card li {
+  color: #c7c7c7;
+  line-height: 1.8;
+}
+
+.supply-card ul {
+  padding-left: 20px;
+}
+
+/* =========================================
+     DELIVERY
+     ========================================= */
+
+.delivery-box {
+  max-width: 1050px;
+  margin: auto;
+  padding: 45px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #e93b20, #b92312);
+  color: white;
+  box-shadow: 0 20px 45px rgba(233, 59, 32, 0.2);
+}
+
+.delivery-box h2 {
+  margin-top: 0;
+  font-size: clamp(30px, 5vw, 48px);
+  letter-spacing: -2px;
+}
+
+.delivery-box p {
+  max-width: 750px;
+  color: #ffe9e3;
+  line-height: 1.8;
+}
+
+.delivery-box strong {
+  color: white;
+}
+
+/* =========================================
+     CONTACT
+     ========================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.contact-card {
+  padding: 35px 25px;
+  text-align: center;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+}
+
+.contact-icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.contact-card h3 {
+  margin: 0 0 8px;
+}
+
+.contact-card p {
+  margin: 0;
+  color: #777;
+  line-height: 1.6;
+}
+
+.contact-card a {
+  color: #e93b20;
+  font-weight: 700;
+}
+
+/* =========================================
+     CTA
+     ========================================= */
+
+.cta {
+  padding: 90px 6%;
+  text-align: center;
+  background: #fff0eb;
+}
+
+.cta h2 {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 55px);
+  letter-spacing: -2px;
+}
+
+.cta p {
+  max-width: 650px;
+  margin: 18px auto 28px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* =========================================
+     FOOTER
+     ========================================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 45px 6%;
+  background: #111;
+  color: white;
+}
+
+.footer h3 {
+  margin-top: 0;
+}
+
+.footer p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: #e93b20;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  padding: 18px 6%;
+  background: #0a0a0a;
+  color: #777;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* =========================================
+     MOBILE RESPONSIVENESS
+     ========================================= */
+
+@media (max-width: 850px) {
+  .site-header {
+    padding: 12px 5%;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 620px;
+    padding: 80px 5%;
+  }
+
+  .hero h1 {
+    letter-spacing: -2.5px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    margin: -30px 5% 0;
+  }
+
+  .stat {
+    border-right: 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .stat:last-child {
+    border-bottom: 0;
+  }
+
+  .about-grid,
+  .steps,
+  .supply-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 75px 5%;
+  }
+
+  .delivery-box {
+    padding: 32px 25px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-text strong {
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: 580px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .about-card,
+  .step,
+  .supply-card {
+    padding: 26px;
+  }
+}
+/* =========================================
+   MOBILE NAVIGATION FIX
+   ========================================= */
+
+@media (max-width: 850px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .site-nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+  }
+
+  .site-nav a {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+/* =========================================
+   MIGAGRILLS HUB HEADER - FINAL FIX
+   ========================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 14px 6%;
+
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #eeeeee;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+  backdrop-filter: blur(12px);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  background: #e93b20;
+  color: #ffffff;
+
+  font-size: 23px;
+  font-weight: 900;
+
+  box-shadow: 0 8px 20px rgba(233, 59, 32, 0.22);
+}
+
+.logo-area h2 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.logo-area p {
+  margin: 3px 0 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header nav a {
+  color: #333333;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.header nav a:hover {
+  color: #e93b20;
+}
+
+.header .nav-button {
+  border: 0;
+
+  border-radius: 10px;
+
+  padding: 12px 18px;
+
+  background: #e93b20;
+  color: #ffffff;
+
+  font-weight: 800;
+
+  box-shadow: 0 8px 18px rgba(233, 59, 32, 0.2);
+}
+
+.header .nav-button:hover {
+  background: #c92f19;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+     MOBILE HEADER
+     ========================================= */
+
+@media (max-width: 850px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 12px 5%;
+  }
+
+  .header nav {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+  }
+
+  .header nav a {
+    font-size: 12px;
+  }
+
+  .header .nav-button {
+    padding: 10px 14px;
+
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+  .logo-area h2 {
+    font-size: 15px;
+  }
+
+  .logo-area p {
+    font-size: 11px;
+  }
+
+  .header nav {
+    gap: 9px;
+  }
+
+  .header nav a {
+    font-size: 11px;
+  }
+}
+/* PROFESSIONAL SOCIAL MEDIA SECTION */
+
+.social-section {
+  padding: 70px 20px;
+  text-align: center;
+  background: #111111;
+}
+
+.social-section .section-heading {
+  margin-bottom: 25px;
+}
+
+.social-section .section-heading span {
+  color: #ff4b2b;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.social-section h2 {
+  color: #ffffff;
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.social-section p {
+  color: #dddddd;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto 35px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #222222;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  background: #ff4b2b;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .social-section {
+    padding: 50px 15px;
+  }
+
+  .social-section h2 {
+    font-size: 26px;
+  }
+
+  .social-links a {
+    width: 100%;
+    max-width: 280px;
+  }
+}
